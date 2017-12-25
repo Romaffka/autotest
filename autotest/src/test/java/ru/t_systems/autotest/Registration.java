@@ -13,6 +13,8 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.Random;
+
 public class Registration {
     private WebDriver driver;
     private WebDriverWait wait;
@@ -72,7 +74,8 @@ public class Registration {
 
     @Test
     public void createNewAccount() {
-        String emailTest = "9876411234@1.com";
+        Random rnd = new Random();
+        String emailTest = rnd.nextInt() + "@site.com";
 
         newCustomerLink.click();
         firstName.sendKeys("Zanzibar");
